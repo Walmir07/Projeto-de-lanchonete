@@ -1,4 +1,4 @@
-//import Op from "sequelize";
+import { Op } from "sequelize";
 import Cliente from "./model/Cliente.js";
 import Pedido from "./model/Pedido.js";
 import Cardapio from "./model/Cardapio.js"
@@ -215,25 +215,33 @@ async function pesquisarPagamento() {
 
 Cliente.destroy({
   where: {
-    id: 1
+    id: {
+      [Op.eq]: 1
+    }
   }
 });
 
 Pedido.destroy({
   where: {
-    id: 1
+    id: {
+    [Op.eq]: 1
+    }
   }
 });
 
 Cardapio.destroy({
   where: {
-    id: 1
+    id: {
+      [Op.eq]: 1
+    }
   }
   
 });
 Pagamento.destroy({
   where: {
-    id: 1
+    id: {
+      [Op.eq]: 1
+    }
   }
 });
 
